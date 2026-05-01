@@ -12,7 +12,7 @@
         }
         body {
             font-family: "Segoe UI", "メイリオ", sans-serif;
-            background: linear-gradient(135deg, #f5e6d3 0%, #e8d9c8 100%);
+            background: linear-gradient(135deg, #ffa751 0%, #ffe259 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -21,62 +21,58 @@
             margin: 0 auto;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
         .header {
-            background: linear-gradient(135deg, #d4a574 0%, #c99360 100%);
+            background: linear-gradient(135deg, #ff9a56 0%, #ffc93c 100%);
             color: #333;
-            padding: 35px 25px;
+            padding: 30px 20px;
             text-align: center;
         }
         .header h1 {
             font-size: 28px;
             margin-bottom: 10px;
-            font-weight: 700;
         }
         .header p {
-            font-size: 15px;
-            opacity: 0.95;
-            font-weight: 500;
+            font-size: 14px;
+            opacity: 0.9;
         }
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
-            padding: 25px;
-            background: #f9f7f4;
-            border-bottom: 2px solid #e8d9c8;
+            padding: 20px;
+            background: #f5f5f5;
+            border-bottom: 2px solid #e0e0e0;
         }
         .stat-box {
             background: white;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .stat-number {
             font-size: 32px;
-            font-weight: 700;
-            color: #d4a574;
+            font-weight: bold;
+            color: #ff9a56;
             margin-bottom: 5px;
         }
         .stat-label {
             font-size: 12px;
             color: #999;
             text-transform: uppercase;
-            font-weight: 600;
         }
         .content {
-            padding: 35px 25px;
+            padding: 30px 20px;
         }
         .content h2 {
-            color: #8b6f47;
-            font-size: 19px;
+            color: #ff7d42;
+            font-size: 18px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #d4a574;
-            font-weight: 700;
+            border-bottom: 2px solid #ffc93c;
         }
         table {
             width: 100%;
@@ -84,44 +80,27 @@
             margin-bottom: 30px;
         }
         thead {
-            background: #f9f7f4;
+            background: #f5f5f5;
         }
         th {
             padding: 15px;
             text-align: left;
             color: #333;
-            font-weight: 700;
-            border-bottom: 2px solid #d4a574;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
             font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-            transition: background 0.2s;
-        }
-        th:hover {
-            background: #f0ebe0;
-        }
-        th.sortable::after {
-            content: " ↕";
-            opacity: 0.5;
-            font-size: 12px;
         }
         td {
             padding: 12px 15px;
             border-bottom: 1px solid #eee;
             font-size: 14px;
-            font-weight: 500;
-            color: #444;
         }
         tr:hover {
-            background: #f9f7f4;
-        }
-        .office-cell {
-            color: #b8631e;
-            font-weight: 700;
+            background: #f9f9f9;
         }
         .name-cell {
             color: #333;
-            font-weight: 600;
+            font-weight: 500;
         }
         .timestamp-cell {
             color: #666;
@@ -142,21 +121,21 @@
             flex-wrap: wrap;
         }
         button {
-            padding: 12px 20px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #d4a574 0%, #c99360 100%);
+            background: linear-gradient(135deg, #ff9a56 0%, #ff7d42 100%);
             color: white;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 154, 86, 0.4);
         }
         .btn-secondary {
             background: #f5f5f5;
@@ -167,28 +146,28 @@
             background: #e8e8e8;
         }
         .btn-danger {
-            background: #d9534f;
+            background: #f44336;
             color: white;
         }
         .btn-danger:hover {
-            background: #c9302c;
+            background: #da190b;
         }
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #b8631e;
+            color: #ff7d42;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: bold;
         }
         .back-link:hover {
             text-decoration: underline;
         }
         .export-button {
-            background: #a8d5ba;
-            color: #2d5f3f;
+            background: #4caf50;
+            color: white;
         }
         .export-button:hover {
-            background: #8ec9a8;
+            background: #45a049;
         }
         @media (max-width: 600px) {
             .header h1 {
@@ -196,7 +175,6 @@
             }
             .stats {
                 grid-template-columns: 1fr;
-                padding: 20px;
             }
             table {
                 font-size: 12px;
@@ -217,7 +195,7 @@
     <div class="container">
         <div class="header">
             <h1>📊 確認者一覧</h1>
-            <p>ルール確認の管理ページ</p>
+            <p>事業所利用ルール確認の管理ページ</p>
         </div>
 
         <div class="stats">
@@ -251,23 +229,37 @@
     </div>
 
     <script>
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwQEFS4zBuDdcOb0jHrHMQJboOcyPzb1Ww-YJhBiZGsLRn9e_fzN6xcni-ek0XR1d5E/exec';
         let currentSort = { column: 'office', direction: 'asc' };
+        let allConfirmations = [];
 
         // ページロード時にデータ表示
         window.addEventListener('load', function() {
-            displayData();
+            loadDataFromGoogleSheets();
+            // 30秒ごとに自動更新
+            setInterval(loadDataFromGoogleSheets, 30000);
         });
 
-        function displayData() {
-            const confirmations = JSON.parse(localStorage.getItem('confirmations') || '[]');
+        function loadDataFromGoogleSheets() {
+            fetch(GOOGLE_APPS_SCRIPT_URL)
+                .then(response => response.json())
+                .then(data => {
+                    allConfirmations = data;
+                    displayData();
+                })
+                .catch(error => {
+                    console.error('Error loading data:', error);
+                });
+        }
 
+        function displayData() {
             // 統計情報更新
-            document.getElementById('totalCount').textContent = confirmations.length;
+            document.getElementById('totalCount').textContent = allConfirmations.length;
 
             // 今日の確認数を計算
             const today = new Date();
             const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-            const todayCount = confirmations.filter(conf => {
+            const todayCount = allConfirmations.filter(conf => {
                 const confDate = new Date(conf.timestamp);
                 return confDate >= todayStart;
             }).length;
@@ -275,7 +267,7 @@
 
             const tableContainer = document.getElementById('tableContainer');
 
-            if (confirmations.length === 0) {
+            if (allConfirmations.length === 0) {
                 tableContainer.innerHTML = `
                     <div class="empty-state">
                         <p>📭 まだ確認者がいません</p>
@@ -285,14 +277,14 @@
             }
 
             // ソート処理
-            const sorted = sortData(confirmations);
+            const sorted = sortData(allConfirmations);
 
             let html = `
                 <table>
                     <thead>
                         <tr>
                             <th style="width: 20%; text-align: center;">#</th>
-                            <th style="width: 20%;" class="sortable" onclick="setSortColumn('office')">事業所</th>
+                            <th style="width: 20%;" class="sortable" onclick="setSortColumn('office')">部署</th>
                             <th style="width: 35%;" class="sortable" onclick="setSortColumn('name')">お名前</th>
                             <th style="width: 25%;" class="sortable" onclick="setSortColumn('timestamp')">確認日時</th>
                         </tr>
@@ -301,11 +293,11 @@
             `;
 
             sorted.forEach((conf, index) => {
-                const office = conf.department || '-';
+                const department = conf.department || '-';
                 html += `
                     <tr>
                         <td style="text-align: center; color: #999;">No. ${sorted.length - index}</td>
-                        <td class="office-cell">${escapeHtml(office)}</td>
+                        <td style="color: #ff7d42; font-weight: bold;">${escapeHtml(department)}</td>
                         <td class="name-cell">${escapeHtml(conf.name)}</td>
                         <td class="timestamp-cell">${conf.displayTime}</td>
                     </tr>
@@ -356,34 +348,30 @@
         }
 
         function refreshData() {
-            displayData();
+            loadDataFromGoogleSheets();
             alert('データを更新しました');
         }
 
         function clearData() {
             if (confirm('⚠️ すべての確認データを削除してもよろしいですか？\n\nこの操作は取り消せません。')) {
-                localStorage.removeItem('confirmations');
-                displayData();
-                alert('データを削除しました');
+                alert('申し訳ございません。Google Sheetsのデータを削除するには、スプレッドシート内のデータを手動で削除してください。');
             }
         }
 
         function exportData() {
-            const confirmations = JSON.parse(localStorage.getItem('confirmations') || '[]');
-
-            if (confirmations.length === 0) {
+            if (allConfirmations.length === 0) {
                 alert('エクスポートするデータがありません');
                 return;
             }
 
             // ソート済みデータを取得
-            const sorted = sortData(confirmations);
+            const sorted = sortData(allConfirmations);
 
             // CSV形式で生成
-            let csv = 'No.,事業所,お名前,確認日時\n';
+            let csv = 'No.,部署,お名前,確認日時\n';
             sorted.forEach((conf, index) => {
-                const office = conf.department || '-';
-                csv += `${sorted.length - index},"${office.replace(/"/g, '""')}","${conf.name.replace(/"/g, '""')}","${conf.displayTime}"\n`;
+                const department = conf.department || '-';
+                csv += `${sorted.length - index},"${department.replace(/"/g, '""')}","${conf.name.replace(/"/g, '""')}","${conf.displayTime}"\n`;
             });
 
             // ダウンロード
@@ -404,9 +392,6 @@
             div.textContent = text;
             return div.innerHTML;
         }
-
-        // 定期的に自動更新（30秒ごと）
-        setInterval(displayData, 30000);
     </script>
 </body>
 </html>
