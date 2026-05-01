@@ -12,7 +12,7 @@
         }
         body {
             font-family: "Segoe UI", "メイリオ", sans-serif;
-            background: linear-gradient(135deg, #ffa751 0%, #ffe259 100%);
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d9c8 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -21,58 +21,62 @@
             margin: 0 auto;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
         .header {
-            background: linear-gradient(135deg, #ff9a56 0%, #ffc93c 100%);
+            background: linear-gradient(135deg, #d4a574 0%, #c99360 100%);
             color: #333;
-            padding: 30px 20px;
+            padding: 35px 25px;
             text-align: center;
         }
         .header h1 {
             font-size: 28px;
             margin-bottom: 10px;
+            font-weight: 700;
         }
         .header p {
-            font-size: 14px;
-            opacity: 0.9;
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 500;
         }
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
-            padding: 20px;
-            background: #f5f5f5;
-            border-bottom: 2px solid #e0e0e0;
+            padding: 25px;
+            background: #f9f7f4;
+            border-bottom: 2px solid #e8d9c8;
         }
         .stat-box {
             background: white;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
         .stat-number {
             font-size: 32px;
-            font-weight: bold;
-            color: #ff9a56;
+            font-weight: 700;
+            color: #d4a574;
             margin-bottom: 5px;
         }
         .stat-label {
             font-size: 12px;
             color: #999;
             text-transform: uppercase;
+            font-weight: 600;
         }
         .content {
-            padding: 30px 20px;
+            padding: 35px 25px;
         }
         .content h2 {
-            color: #ff7d42;
-            font-size: 18px;
+            color: #8b6f47;
+            font-size: 19px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #ffc93c;
+            border-bottom: 2px solid #d4a574;
+            font-weight: 700;
         }
         table {
             width: 100%;
@@ -80,27 +84,44 @@
             margin-bottom: 30px;
         }
         thead {
-            background: #f5f5f5;
+            background: #f9f7f4;
         }
         th {
             padding: 15px;
             text-align: left;
             color: #333;
-            font-weight: bold;
-            border-bottom: 2px solid #ddd;
+            font-weight: 700;
+            border-bottom: 2px solid #d4a574;
             font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        th:hover {
+            background: #f0ebe0;
+        }
+        th.sortable::after {
+            content: " ↕";
+            opacity: 0.5;
+            font-size: 12px;
         }
         td {
             padding: 12px 15px;
             border-bottom: 1px solid #eee;
             font-size: 14px;
+            font-weight: 500;
+            color: #444;
         }
         tr:hover {
-            background: #f9f9f9;
+            background: #f9f7f4;
+        }
+        .office-cell {
+            color: #b8631e;
+            font-weight: 700;
         }
         .name-cell {
             color: #333;
-            font-weight: 500;
+            font-weight: 600;
         }
         .timestamp-cell {
             color: #666;
@@ -121,21 +142,21 @@
             flex-wrap: wrap;
         }
         button {
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #ff9a56 0%, #ff7d42 100%);
+            background: linear-gradient(135deg, #d4a574 0%, #c99360 100%);
             color: white;
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 154, 86, 0.4);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
         }
         .btn-secondary {
             background: #f5f5f5;
@@ -146,28 +167,28 @@
             background: #e8e8e8;
         }
         .btn-danger {
-            background: #f44336;
+            background: #d9534f;
             color: white;
         }
         .btn-danger:hover {
-            background: #da190b;
+            background: #c9302c;
         }
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #ff7d42;
+            color: #b8631e;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
         }
         .back-link:hover {
             text-decoration: underline;
         }
         .export-button {
-            background: #4caf50;
-            color: white;
+            background: #a8d5ba;
+            color: #2d5f3f;
         }
         .export-button:hover {
-            background: #45a049;
+            background: #8ec9a8;
         }
         @media (max-width: 600px) {
             .header h1 {
@@ -175,6 +196,7 @@
             }
             .stats {
                 grid-template-columns: 1fr;
+                padding: 20px;
             }
             table {
                 font-size: 12px;
@@ -195,7 +217,7 @@
     <div class="container">
         <div class="header">
             <h1>📊 確認者一覧</h1>
-            <p>事業所利用ルール確認の管理ページ</p>
+            <p>ルール確認の管理ページ</p>
         </div>
 
         <div class="stats">
@@ -229,6 +251,8 @@
     </div>
 
     <script>
+        let currentSort = { column: 'office', direction: 'asc' };
+
         // ページロード時にデータ表示
         window.addEventListener('load', function() {
             displayData();
@@ -260,30 +284,28 @@
                 return;
             }
 
-            // 時系列でソート（新しい順）
-            const sorted = [...confirmations].sort((a, b) => {
-                return new Date(b.timestamp) - new Date(a.timestamp);
-            });
+            // ソート処理
+            const sorted = sortData(confirmations);
 
             let html = `
                 <table>
                     <thead>
                         <tr>
                             <th style="width: 20%; text-align: center;">#</th>
-                            <th style="width: 20%;">部署</th>
-                            <th style="width: 35%;">お名前</th>
-                            <th style="width: 25%;">確認日時</th>
+                            <th style="width: 20%;" class="sortable" onclick="setSortColumn('office')">事業所</th>
+                            <th style="width: 35%;" class="sortable" onclick="setSortColumn('name')">お名前</th>
+                            <th style="width: 25%;" class="sortable" onclick="setSortColumn('timestamp')">確認日時</th>
                         </tr>
                     </thead>
                     <tbody>
             `;
 
             sorted.forEach((conf, index) => {
-                const department = conf.department || '-';
+                const office = conf.department || '-';
                 html += `
                     <tr>
                         <td style="text-align: center; color: #999;">No. ${sorted.length - index}</td>
-                        <td style="color: #ff7d42; font-weight: bold;">${escapeHtml(department)}</td>
+                        <td class="office-cell">${escapeHtml(office)}</td>
                         <td class="name-cell">${escapeHtml(conf.name)}</td>
                         <td class="timestamp-cell">${conf.displayTime}</td>
                     </tr>
@@ -296,6 +318,41 @@
             `;
 
             tableContainer.innerHTML = html;
+        }
+
+        function sortData(confirmations) {
+            const sorted = [...confirmations];
+
+            sorted.sort((a, b) => {
+                let aVal, bVal;
+
+                if (currentSort.column === 'office') {
+                    aVal = (a.department || '').toLowerCase();
+                    bVal = (b.department || '').toLowerCase();
+                } else if (currentSort.column === 'name') {
+                    aVal = a.name.toLowerCase();
+                    bVal = b.name.toLowerCase();
+                } else if (currentSort.column === 'timestamp') {
+                    aVal = new Date(a.timestamp);
+                    bVal = new Date(b.timestamp);
+                }
+
+                if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
+                if (aVal > bVal) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            return sorted;
+        }
+
+        function setSortColumn(column) {
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
+            displayData();
         }
 
         function refreshData() {
@@ -319,16 +376,14 @@
                 return;
             }
 
-            // ソート（新しい順）
-            const sorted = [...confirmations].sort((a, b) => {
-                return new Date(b.timestamp) - new Date(a.timestamp);
-            });
+            // ソート済みデータを取得
+            const sorted = sortData(confirmations);
 
             // CSV形式で生成
-            let csv = 'No.,部署,お名前,確認日時\n';
+            let csv = 'No.,事業所,お名前,確認日時\n';
             sorted.forEach((conf, index) => {
-                const department = conf.department || '-';
-                csv += `${sorted.length - index},"${department.replace(/"/g, '""')}","${conf.name.replace(/"/g, '""')}","${conf.displayTime}"\n`;
+                const office = conf.department || '-';
+                csv += `${sorted.length - index},"${office.replace(/"/g, '""')}","${conf.name.replace(/"/g, '""')}","${conf.displayTime}"\n`;
             });
 
             // ダウンロード
