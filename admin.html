@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>確認者一覧 - 管理者ページ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI", "メイリオ", sans-serif;
+            background: linear-gradient(135deg, #ffa751 0%, #ffe259 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #ff9a56 0%, #ffc93c 100%);
+            color: #333;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff9a56;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .content h2 {
+            color: #ff7d42;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffc93c;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        thead {
+            background: #f5f5f5;
+        }
+        th {
+            padding: 15px;
+            text-align: left;
+            color: #333;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+            font-size: 14px;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        tr:hover {
+            background: #f9f9f9;
+        }
+        .name-cell {
+            color: #333;
+            font-weight: 500;
+        }
+        .timestamp-cell {
+            color: #666;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+        .empty-state p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff7d42 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 154, 86, 0.4);
+        }
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+        .btn-secondary:hover {
+            background: #e8e8e8;
+        }
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #da190b;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #ff7d42;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .export-button {
+            background: #4caf50;
+            color: white;
+        }
+        .export-button:hover {
+            background: #45a049;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 10px;
+            }
+            .action-buttons {
+                flex-direction: column;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 確認者一覧</h1>
+            <p>事業所利用ルール確認の管理ページ</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="totalCount">0</div>
+                <div class="stat-label">確認者数</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="todayCount">0</div>
+                <div class="stat-label">今日の確認</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <a href="index.html" class="back-link">← 利用ルール確認ページに戻る</a>
+
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="refreshData()">🔄 更新</button>
+                <button class="export-button" onclick="exportData()">📥 CSVダウンロード</button>
+                <button class="btn-danger" onclick="clearData()">🗑️ すべてクリア</button>
+            </div>
+
+            <h2>確認した人一覧</h2>
+
+            <div id="tableContainer">
+                <div class="empty-state">
+                    <p>📭 まだ確認者がいません</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ページロード時にデータ表示
+        window.addEventListener('load', function() {
+            displayData();
+        });
+
+        function displayData() {
+            const confirmations = JSON.parse(localStorage.getItem('confirmations') || '[]');
+
+            // 統計情報更新
+            document.getElementById('totalCount').textContent = confirmations.length;
+
+            // 今日の確認数を計算
+            const today = new Date();
+            const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            const todayCount = confirmations.filter(conf => {
+                const confDate = new Date(conf.timestamp);
+                return confDate >= todayStart;
+            }).length;
+            document.getElementById('todayCount').textContent = todayCount;
+
+            const tableContainer = document.getElementById('tableContainer');
+
+            if (confirmations.length === 0) {
+                tableContainer.innerHTML = `
+                    <div class="empty-state">
+                        <p>📭 まだ確認者がいません</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // 時系列でソート（新しい順）
+            const sorted = [...confirmations].sort((a, b) => {
+                return new Date(b.timestamp) - new Date(a.timestamp);
+            });
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 20%; text-align: center;">#</th>
+                            <th style="width: 20%;">部署</th>
+                            <th style="width: 35%;">お名前</th>
+                            <th style="width: 25%;">確認日時</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            sorted.forEach((conf, index) => {
+                const department = conf.department || '-';
+                html += `
+                    <tr>
+                        <td style="text-align: center; color: #999;">No. ${sorted.length - index}</td>
+                        <td style="color: #ff7d42; font-weight: bold;">${escapeHtml(department)}</td>
+                        <td class="name-cell">${escapeHtml(conf.name)}</td>
+                        <td class="timestamp-cell">${conf.displayTime}</td>
+                    </tr>
+                `;
+            });
+
+            html += `
+                    </tbody>
+                </table>
+            `;
+
+            tableContainer.innerHTML = html;
+        }
+
+        function refreshData() {
+            displayData();
+            alert('データを更新しました');
+        }
+
+        function clearData() {
+            if (confirm('⚠️ すべての確認データを削除してもよろしいですか？\n\nこの操作は取り消せません。')) {
+                localStorage.removeItem('confirmations');
+                displayData();
+                alert('データを削除しました');
+            }
+        }
+
+        function exportData() {
+            const confirmations = JSON.parse(localStorage.getItem('confirmations') || '[]');
+
+            if (confirmations.length === 0) {
+                alert('エクスポートするデータがありません');
+                return;
+            }
+
+            // ソート（新しい順）
+            const sorted = [...confirmations].sort((a, b) => {
+                return new Date(b.timestamp) - new Date(a.timestamp);
+            });
+
+            // CSV形式で生成
+            let csv = 'No.,部署,お名前,確認日時\n';
+            sorted.forEach((conf, index) => {
+                const department = conf.department || '-';
+                csv += `${sorted.length - index},"${department.replace(/"/g, '""')}","${conf.name.replace(/"/g, '""')}","${conf.displayTime}"\n`;
+            });
+
+            // ダウンロード
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            const timestamp = new Date().toISOString().split('T')[0];
+            link.setAttribute('href', url);
+            link.setAttribute('download', `確認者一覧_${timestamp}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 定期的に自動更新（30秒ごと）
+        setInterval(displayData, 30000);
+    </script>
+</body>
+</html>

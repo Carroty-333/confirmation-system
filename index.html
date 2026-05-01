@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大切なお知らせ - より良い就職準備のために</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Segoe UI", "メイリオ", sans-serif;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d9c8 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #d4a574 0%, #c99360 100%);
+            color: #333;
+            padding: 35px 25px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        .content {
+            padding: 35px 25px;
+            font-weight: 500;
+        }
+        .content h2 {
+            color: #8b6f47;
+            font-size: 19px;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4a574;
+            font-weight: 700;
+        }
+        .content h2:first-child {
+            margin-top: 0;
+        }
+        .content p {
+            color: #444;
+            line-height: 2;
+            margin-bottom: 18px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .content ul {
+            margin-left: 25px;
+            margin-bottom: 18px;
+        }
+        .content li {
+            color: #444;
+            line-height: 2;
+            margin-bottom: 14px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .important {
+            color: #b8631e;
+            font-weight: 700;
+        }
+        .form-section {
+            padding: 35px 25px;
+            background: #f9f7f4;
+            border-top: 2px solid #e8d9c8;
+        }
+        .form-group {
+            margin-bottom: 22px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #d4a574;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            font-weight: 500;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #8b6f47;
+        }
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #d4a574;
+            border-radius: 5px;
+            font-size: 15px;
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s;
+            font-family: "Segoe UI", "メイリオ", sans-serif;
+            font-weight: 500;
+        }
+        select:focus {
+            outline: none;
+            border-color: #8b6f47;
+        }
+        select option {
+            padding: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #d4a574 0%, #c99360 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .success-message {
+            display: none;
+            background: #a8d5ba;
+            color: #2d5f3f;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            .content {
+                padding: 25px 18px;
+            }
+            .form-section {
+                padding: 25px 18px;
+            }
+            input[type="text"], button, select {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 大切なお知らせ</h1>
+            <p>より良い就職準備のために：利用ルールと心構えの再確認</p>
+        </div>
+
+        <div class="content">
+            <h2>みなさんへのメッセージ</h2>
+            <p>日々の訓練、お疲れ様です！</p>
+            <p>皆さんがそれぞれの目標（就職）に向かって、よりスムーズにステップアップできるよう、改めて事業所を利用する上でのルールや考え方を整理しました。</p>
+
+            <h2>① 就職に強い体力をつくる「週6日通所」と「報告・連絡」</h2>
+            <p>就職を目指す上で一番の土台になるのは、安定した生活リズムと体力です。</p>
+            <p>データとしても、安定して多い日数を通所できている方ほど、就職に結びつきやすいという傾向があります。</p>
+            <ul>
+                <li><span class="important">通所日数の基本：</span><br>相談員さんとの会議などで、体調やペースに合わせて個別に通所日数を調整している方を除き、土曜日を含めた週6日の通所を基本と考えていきましょう。</li>
+                <li><span class="important">お休みの連絡について：</span><br>お休みされる場合は、平日・土曜に関わらず、LINE・Chatwork・口頭で必ずご連絡ください。数日先の予定が決まっている場合も、同様にスタッフへお伝えください。</li>
+                <li><span class="important">お休み理由の伝え方：</span><br>「体調不良で休みます」だけでなく、「昨夜から腹痛がある」「薬の影響で体が重い」など、少し詳しく状態を教えてください。<br>※月8日までのお休み（日数調整）はこれまで通り可能です。その際は「明日は日数調整でお休みします」と伝えていただければ大丈夫です。</li>
+                <li><span class="important">お弁当のキャンセル：</span><br>当日キャンセルは<span class="important">【9:45まで】</span>にご連絡をお願いします。</li>
+            </ul>
+
+            <h2>② お弁当代の精算方法について（就労移行支援をご利用の方へ）</h2>
+            <p>これまで当日キャンセルの際はお弁当代を「経費からの差し引き」で対応していましたが、経費の仕組み変更に伴い、今後は<span class="important">「月末に実費でのご精算」</span>をお願いすることになりました。</p>
+            <p>対象の方には月末にスタッフから個別にご連絡します。詳細は後日、改めて口頭でも詳しくご説明します。</p>
+
+            <h2>③ 就業時間を意識した「Welsysへの予定入力」</h2>
+            <p>Welsysへの翌日以降の予定入力は、これまで以上に徹底していきましょう。</p>
+            <p>入力した予定時間は「会社との約束（勤務時間）」だと思って、できる限り守るように意識してみてください。</p>
+            <ul>
+                <li><span class="important">もし遅れてしまう時は：</span><br>もちろん、交通機関の遅延や急な予定変更などは仕方のないことです。その場合は、わかった時点でしっかりスタッフへ連絡をしてください。「遅れる時の報・連・相」も大切な仕事のスキルのひとつです。</li>
+            </ul>
+
+            <h2>④ 日報への返信スタイルの変更</h2>
+            <p>スタッフの業務体制変更に伴い、今後、日報への返信はこれまでより簡潔なものになります。</p>
+            <p>ただし、皆さんが書いた内容はスタッフ全員が必ず全て目を通しています。</p>
+            <p>日報を書くことは、就職後の「業務報告」の練習です。これまで通り、その日取り組んだ内容をしっかり報告してください。内容に応じて、詳しくお話しを伺ったり、しっかり返信させていただくこともあります。</p>
+
+            <h2>⑤ 在宅支援（リモート）の接続回数と報告ルール</h2>
+            <p>リモート接続の回数を「開始・終了」の計2回に変更します。</p>
+            <p>テキストで報告する際は、Chatworkの概要欄にある以下のフォーマットを使用してください。</p>
+            <ul>
+                <li><span class="important">【開始報告フォーマット】</span><br>
+                今から学習を開始します。<br>
+                <br>
+                ・睡眠状況（例：22:00～7:00、あまり寝付けなかった）<br>
+                ・今日の体調（良い・普通・あまり良くない・悪い）<br>
+                ・今日の学習予定内容：<br>
+                ・在宅終了予定時間：<br>
+                ・その他伝達事項：</li>
+                <li style="margin-top: 20px;"><span class="important">【終了報告フォーマット】</span><br>
+                学習を終了します。<br>
+                <br>
+                ・今日進んだ学習の内容（具体的に何の作業がどれくらい進んだか）：<br>
+                ・その他伝達事項：</li>
+            </ul>
+
+            <h2>⑥ 月1回以上の通所と振り返り</h2>
+            <p>在宅支援をメインにされている方も、<span class="important">「月1回以上の通所」と「学習の振り返り」</span>が必須となります。</p>
+            <p>通所時には、経費のお渡しやフィードバックを直接行います。体調や用事で都合が合わなくなることもあるので、余裕を持って通所日を設定してください。</p>
+            <p>学習の振り返りについては、スタッフと少しお話をして1ヶ月間の在宅での学習状況や学習の中での課題を確認をしたり、次の1ヶ月の目標決めなどをさせていただきます。</p>
+
+            <p style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #d4a574;"><strong>以上の内容を確認しましたら、確認の証として以下の通り入力をお願いします。</strong></p>
+            <p style="margin-top: 18px; color: #333; font-weight: 600;">1.&nbsp; <strong>【事業所名】と【お名前】</strong>を入力してください<br><br>2.&nbsp; このページの下にある<strong>「確認しました」ボタン</strong>を押してください</p>
+            <p style="margin-top: 18px; color: #555; font-weight: 500;">不明な点があれば、いつでもスタッフに聞いてください。<br>これからも一緒に頑張っていきましょう！</p>
+        </div>
+
+        <div class="form-section">
+            <div class="success-message" id="successMessage">
+                ✅ ありがとうございます！確認が完了しました。
+            </div>
+
+            <div class="form-group">
+                <label for="department">部署 *</label>
+                <select id="department" required>
+                    <option value="">-- 部署を選択してください --</option>
+                    <option value="TeToTe">TeToTe</option>
+                    <option value="ENOWA">ENOWA</option>
+                    <option value="tasai">tasai</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">お名前 *</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="例：田中太郎"
+                    required
+                    autocomplete="off"
+                />
+            </div>
+
+            <button id="submitBtn" onclick="submitConfirmation()">
+                ✓ 内容をしっかり確認しました
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ページロード時に確認済みか確認
+        window.addEventListener('load', function() {
+            const confirmations = JSON.parse(localStorage.getItem('confirmations') || '[]');
+            if (confirmations.length > 0) {
+                document.getElementById('successMessage').style.display = 'block';
+            }
+        });
+
+        function submitConfirmation() {
+            const departmentSelect = document.getElementById('department');
+            const nameInput = document.getElementById('name');
+            const department = departmentSelect.value.trim();
+            const name = nameInput.value.trim();
+
+            if (!department) {
+                alert('部署を選択してください');
+                departmentSelect.focus();
+                return;
+            }
+
+            if (!name) {
+                alert('お名前を入力してください');
+                nameInput.focus();
+                return;
+            }
+
+            // 同じ名前・部署で既に確認済みかチェック
+            const confirmations = JSON.parse(localStorage.getItem('confirmations') || '[]');
+            const alreadyConfirmed = confirmations.some(conf => conf.name === name && conf.department === department);
+
+            if (alreadyConfirmed) {
+                alert(`${department} / ${name}さんは既に確認済みです。`);
+                return;
+            }
+
+            // 新しい確認を追加
+            const now = new Date();
+            const confirmation = {
+                department: department,
+                name: name,
+                timestamp: now.toISOString(),
+                displayTime: formatDate(now)
+            };
+
+            confirmations.push(confirmation);
+            localStorage.setItem('confirmations', JSON.stringify(confirmations));
+
+            // 成功メッセージ表示
+            document.getElementById('successMessage').style.display = 'block';
+            departmentSelect.value = '';
+            nameInput.value = '';
+
+            // 2秒後にメッセージを非表示
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 2000);
+        }
+
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}年${month}月${day}日 ${hours}:${minutes}`;
+        }
+
+        // Enterキーで送信
+        document.getElementById('name').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                submitConfirmation();
+            }
+        });
+
+        // departmentが変わったらnameにフォーカス
+        document.getElementById('department').addEventListener('change', function(e) {
+            if (this.value) {
+                document.getElementById('name').focus();
+            }
+        });
+    </script>
+</body>
+</html>
